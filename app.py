@@ -1,7 +1,7 @@
 # Trabajo Práctico I - Programación II
 
-
 import os
+import bibloteca
 
 print("Bienvenido!")
 respuesta = ''
@@ -20,7 +20,7 @@ while respuesta != "salir":
     os.system ("cls") #Limpiar pantalla
     if opt.isnumeric():
         if int(opt) == 1:
-            #completar
+            bibloteca.ejemplares_prestados()
             print()
         elif int(opt) == 2:
             #completar
