@@ -18,35 +18,49 @@ def validacion_codigo(codigo):  #Definimos una nueva funcion para validar el cod
                 break
     if not validacion:
         print("Error, no existen libros con ese codigo")
-def ejemplares_prestados(): #Funcion de gestion de prestamos de libros
+def prestar_ejemplar_libro(): #Funcion de gestion de prestamos de libros
     codigo=str(input("Ingrese el codigo del libro: "))
     codigoVal = validacion_codigo(codigo)
     if codigoVal:
-        for x in range(0,3):
-            if libros[x]["cod"] == codigo:
-                if libros[x]["cant_ej_ad"] > 0:
-                    print(f'Autor: {libros[x]["autor"]}\nTitulo: {libros[x]["titulo"]}\nCantidad de ejemplares disponibles: {libros[x]["cant_ej_ad"]}')
+        for libro in libros:
+            if libro["cod"] == codigo:
+                if libro["cant_ej_ad"] > 0:
+                    print(f'Autor: {libro["autor"]}\nTitulo: {libro["titulo"]}\nCantidad de ejemplares disponibles: {libro["cant_ej_ad"]}')
                     variableConfirmacion = int(input("\n\nDesea confirmar el prestamo? \n1.Si\n2.No\n"))
                     if variableConfirmacion == 1:
-                        libros[x]["cant_ej_ad"] -= 1
-                        libros[x]["cant_ej_pr"] += 1
+                        libro["cant_ej_ad"] -= 1
+                        libro["cant_ej_pr"] += 1
                     else: print("Prestamo cancelado.")
                 else: print("No quedan ejemplares para prestar")
+                break
     return None
+
+def devolver_ejemplar_libro():
+    codigo=str(input("Ingrese el codigo del libro a devolver: "))
+    codigoVal = validacion_codigo(codigo)
+    if codigoVal:
+        for libro in libros:
+            if libro["cod"] == codigo:
+                if libro["cant_ej_pr"] > 0:
+                    variableConfirmacion = int(input("\n\nDesea confirmar la devolucion? \n1.Si\n2.No\n"))
+                    if variableConfirmacion == 1:
+                        libro["cant_ej_ad"] += 1
+                        libro["cant_ej_pr"] -= 1
+                    else: print("Devolucion cancelada.")
+                else: print("No hay ejemplares prestados")
+                break
+    return None
+
 def registrar_nuevo_libro():
     nuevo_libro = l.nuevo_libro()
+    libros.append(nuevo_libro)
     #completar
-    return None
 
 def eliminar_ejemplar_libro():
     #completar
     return None
 
-def prestar_ejemplar_libro():
-    #completar
-    return None
-
-def devolver_ejemplar_libro():
+def ejemplares_prestados():
     #completar
     return None
 

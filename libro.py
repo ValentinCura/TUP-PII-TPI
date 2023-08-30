@@ -4,8 +4,13 @@ libro2 = {'cod': 'QgfV4j3c', 'cant_ej_ad': 4, 'cant_ej_pr': 2, "titulo": "El pri
 libro3 = {'cod': 'adOd09UE', 'cant_ej_ad': 1, 'cant_ej_pr': 0, "titulo": "El código Da Vinci", "autor": "Dan Brown"}
 
 def nuevo_libro():
-    #completar
-    return None
+    codigoLibro = str(input("\nIngrese el codigo del libro que desea registrar: "))
+    cantidadEjemplares = int(input("\nIngrese la cantidad de ejemplares adquiridos: "))
+    cantidadEPrestada = int(input("\nIngrese la cantidad de ejemplares prestados: "))                  
+    tituloLibro = str(input("\nIngrese su titulo: "))
+    autorLibro = str(input("\ningrese su autor: "))
+    nuevoLibro = {'cod': codigoLibro, 'cant_ej_ad': cantidadEjemplares, 'cant_ej_pr': cantidadEPrestada, "titulo": tituloLibro, "autor": autorLibro}
+    return nuevoLibro
 
 def generar_codigo():
     #completar
