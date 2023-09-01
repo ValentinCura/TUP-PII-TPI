@@ -54,12 +54,16 @@ def devolver_ejemplar_libro():
 def registrar_nuevo_libro():
     nuevo_libro = l.nuevo_libro()
     libros.append(nuevo_libro)
-    #completar
 
 def eliminar_ejemplar_libro():
-    #completar
-    return None
-
+    codigo=str(input("Ingrese el codigo del libro que desea eliminar: "))
+    codigoVal = validacion_codigo(codigo)
+    if codigoVal:
+        for libro in libros:
+            if libro["cod"] == codigo:
+                libros.remove(libro)
+                print("\nLibro eliminado.\n")
+                break
 def ejemplares_prestados():
     #completar
     return None
