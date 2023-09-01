@@ -64,10 +64,13 @@ def eliminar_ejemplar_libro():
                 libros.remove(libro)
                 print("\nLibro eliminado.\n")
                 break
-def ejemplares_prestados():
-    #completar
-    return None
+def ejemplares_prestados():   
+    for libro in libros:
+        print(f"Libro: {libro['titulo']}")
+        if libro['cant_ej_pr'] == 0:
+            print("No tiene ningun ejemplar prestado.\n")
+        else: print(f"La cantidad de ejemplares prestados es: {libro['cant_ej_pr']}\n")
 
-def nuevo_libro():
+'''def nuevo_libro():
     #completar
-    return None
+    return None'''
