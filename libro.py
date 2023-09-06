@@ -8,8 +8,19 @@ libro3 = {'cod': 'adOd09UE', 'cant_ej_ad': 1, 'cant_ej_pr': 0, "titulo": "El có
 
 def nuevo_libro():
     codigoLibro = generar()
-    cantidadEjemplares = int(input("\nIngrese la cantidad de ejemplares adquiridos: "))
-    cantidadEPrestada = int(input("\nIngrese la cantidad de ejemplares prestados: "))                  
+    
+    while True:
+        cantidadEjemplares = int(input("\nIngrese la cantidad de ejemplares adquiridos: "))
+        if cantidadEjemplares > 0:
+            break
+        else: print("Ingrese correctamente la cantidad de ejemplares(mayor a 0): \n")
+
+    while True:
+        cantidadEPrestada = int(input("\nIngrese la cantidad de ejemplares prestados: "))  
+        if cantidadEPrestada >= 0:
+            break
+        else: print("Ingrese correctamente la cantidad de ejemplares(mayor o igual a 0):\n")
+
     tituloLibro = str(input("\nIngrese su titulo: "))
     autorLibro = str(input("\ningrese su autor: "))
     print(f'\nAutor: {autorLibro}\nTitulo: {tituloLibro}\nCodigo del libro: {codigoLibro}\nCantidad de ejemplares disponibles: {cantidadEjemplares}\nCantidad de ejemplares prestados: {cantidadEPrestada}')
