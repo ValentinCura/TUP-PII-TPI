@@ -73,4 +73,4 @@ def ejemplares_prestados():
 
 '''def nuevo_libro():
     #completar
-    return None'''
+    return None''' #No usamos esta funcion ya que lo hicimos en la de registrar_nuevo_libro

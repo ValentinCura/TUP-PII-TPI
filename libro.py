@@ -18,4 +18,4 @@ def nuevo_libro():
 
 '''def generar_codigo():
     completar
-    return None'''
+    return None''' #No usamos esta funcion ya que importamos la funcion generar del archivo cod_generator, y directamente la usamos en la funcion nuevo_libro para optimizar mas el codigo.
